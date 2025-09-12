@@ -4,7 +4,7 @@ public class Car {
     private final String name;
     private int speed;
     private int speedCnt;
-
+    private static final int MINIMUM_SPEED_TO_MOVE = 4;
 
     public Car(String name) {
         this.name = name;
@@ -30,7 +30,7 @@ public class Car {
 
     public void carMove() {
         setSpeed();
-        if (speed >= 4) {
+        if (speed >= MINIMUM_SPEED_TO_MOVE) {
             upSpeedCnt();
         }
     }
