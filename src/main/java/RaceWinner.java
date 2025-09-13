@@ -1,6 +1,19 @@
 public class RaceWinner extends RaceSetting{
     int winnerCnt = -1;
 
+    RaceWinner() {
+        super();
+        findWinnerCnt();
+        printAllCarMove();
+        printWinner();
+    }
+
+    void printAllCarMove()
+    {
+        for (Car car : cars) {
+            System.out.println("이름 : " + car.getName()+" Move: " + car.getmoveCnt());
+        }
+    }
     void findWinnerCnt() //
     {
         for (Car car : cars) {
@@ -21,9 +34,4 @@ public class RaceWinner extends RaceSetting{
             }
         }
     }
-
-
-
-
-
 }
