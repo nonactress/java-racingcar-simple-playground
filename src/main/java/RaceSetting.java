@@ -4,7 +4,6 @@ public class RaceSetting {
     private Car[] cars;
     private int carNum;
     private int raceNum;
-    int[] forwardCnt;
 
     public void setCarNum(Scanner scanner)
     {
@@ -27,7 +26,7 @@ public class RaceSetting {
         }
     }
 
-    public void setRace()
+    RaceSetting()
     {
         Scanner scanner = new Scanner(System.in);
         setCarNum(scanner);
