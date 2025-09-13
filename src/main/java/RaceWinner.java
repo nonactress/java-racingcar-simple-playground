@@ -1,18 +1,25 @@
 public class RaceWinner extends RaceSetting{
-    RaceSetting raceSetting;
     int winnerCnt = -1;
 
-    RaceWinner(RaceSetting raceSetting) {
-        this.raceSetting = raceSetting;
+    void findWinnerCnt() //
+    {
+        for (Car car : cars) {
+            if(winnerCnt<car.getmoveCnt())
+            {
+                winnerCnt=car.getmoveCnt();
+            }
+        }
     }
 
-    void FirstPrizeCar(){
-        for(int i=0;i<raceSetting.carNum;i++)
-        {
-
+    void printWinner()
+    {
+        System.out.println("우승 : ");
+        for (Car car : cars) {
+            if(winnerCnt==car.getmoveCnt())
+            {
+                System.out.println(car.getName());
+            }
         }
-
-
     }
 
 

@@ -1,14 +1,14 @@
 public class Car {
 
     private String name;
-    private int moveCnt;
+    private int moveCnt=0;
 
 
     public int getmoveCnt() {
         return moveCnt;
     }
 
-    private void upmoveCnt() {
+    public void upmoveCnt() {
         moveCnt++;
     }
 

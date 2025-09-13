@@ -10,8 +10,7 @@ public class RaceSetting {
     Random random = new Random();
 
 
-    public void setCarNum(Scanner scanner)
-    {
+    public void setCarNum(Scanner scanner) {
         System.out.println("출전한 자동차 수: ");
         this.carNum = scanner.nextInt();
     }
@@ -22,35 +21,32 @@ public class RaceSetting {
     }
 
     public void setCars(Scanner scanner) {
-        this.cars=new Car[carNum];
+        this.cars = new Car[carNum];
 
-        for(int i=0;i<raceNum;i++)
-        {
+        for (int i = 0; i < raceNum; i++) {
             System.out.println(i + "번 자동차 이름 : ");
-            String temp=scanner.next();
+            String temp = scanner.next();
             cars[i].setName(temp);
-            setMoveCnt(Car temp,int );
+            setMoveCnt(cars[i]);
         }
     }
 
 
-    public void setMoveCnt(Car temp,int ) // car.move 진행
+    public void setMoveCnt(Car temp) // car.move 진행
     {
-        for(int i=0;i<carNum;i++)
-        {
+        for (int i = 0; i < raceNum; i++) {
             checkSpeedTOMove(cars[i]);
         }
 
     }
-    void checkSpeedTOMove (Car temp)
-    {
-        if(random.nextInt(10)>MINIMUM_SPEED_TO_MOVE)
-        {
+
+    void checkSpeedTOMove(Car temp) {
+        if (random.nextInt(10) > MINIMUM_SPEED_TO_MOVE) {
             temp.upmoveCnt();
         }
     }
-    RaceSetting()
-    {
+
+    RaceSetting() {
         Scanner scanner = new Scanner(System.in);
         setCarNum(scanner);
         setRaceNum(scanner);
