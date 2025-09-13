@@ -1,9 +1,14 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class RaceSetting {
     protected Car[] cars;
     protected int carNum;
     protected int raceNum;
+    private static final int MINIMUM_SPEED_TO_MOVE = 4;
+
+    Random random = new Random();
+
 
     public void setCarNum(Scanner scanner)
     {
@@ -24,9 +29,26 @@ public class RaceSetting {
             System.out.println(i + "번 자동차 이름 : ");
             String temp=scanner.next();
             cars[i].setName(temp);
+            setMoveCnt(Car temp,int );
         }
     }
 
+
+    public void setMoveCnt(Car temp,int ) // car.move 진행
+    {
+        for(int i=0;i<carNum;i++)
+        {
+            checkSpeedTOMove(cars[i]);
+        }
+
+    }
+    void checkSpeedTOMove (Car temp)
+    {
+        if(random.nextInt(10)>MINIMUM_SPEED_TO_MOVE)
+        {
+            temp.upmoveCnt();
+        }
+    }
     RaceSetting()
     {
         Scanner scanner = new Scanner(System.in);
