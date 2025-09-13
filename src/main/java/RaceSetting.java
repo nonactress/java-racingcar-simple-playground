@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class RaceSetting {
-    private Car[] cars;
-    private int carNum;
-    private int raceNum;
+    protected Car[] cars;
+    protected int carNum;
+    protected int raceNum;
 
     public void setCarNum(Scanner scanner)
     {
@@ -21,6 +21,7 @@ public class RaceSetting {
 
         for(int i=0;i<raceNum;i++)
         {
+            System.out.println(i + "번 자동차 이름 : ");
             String temp=scanner.next();
             cars[i].setName(temp);
         }

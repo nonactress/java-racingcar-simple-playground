@@ -5,22 +5,8 @@ public class CarMain {
   //  public int maxIndex(int[] arr,int max)
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("출전한 자동차 : ");
-        int carNum = scanner.nextInt();
 
-        System.out.println("몇 번 달릴까? : ");
-        int raceNum = scanner.nextInt();
 
-        scanner.close();
-
-        Car[] cars = new Car[carNum];
-        int[] forwardCnt = new int[carNum];
-        int maxCnt=-1;
-
-        for (int i = 0; i < carNum; i++) {
-            race(cars, i, raceNum);
-        }
 
         showFrowardCnt(cars,carNum);
 
