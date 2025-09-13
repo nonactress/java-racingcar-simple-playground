@@ -32,13 +32,20 @@ public class RaceSetting {
 
     public void runRace() {
         for (int i = 0; i < raceNum; i++) {
-            for (Car car : cars) {
-                checkSpeedTOMove(car);
+            {
+                checkSpeedTOMove();
             }
         }
     }
 
-    void checkSpeedTOMove(Car temp) {
+    void checkSpeedTOMove() {
+        for (Car car : cars) {
+            isOverMinToMove(car);
+        }
+
+    }
+
+    private void isOverMinToMove(Car temp) {
         if (random.nextInt(10) > MINIMUM_SPEED_TO_MOVE) {
             temp.upmoveCnt();
         }
