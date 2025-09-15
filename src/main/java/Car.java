@@ -1,8 +1,10 @@
 public class Car {
     private static final int MOVE_CONDITION = 4; // 전진 조건
-    private final String name;
+    private String name;
     private int position = 0;
 
+
+    public Car(){}
     public Car(String name) {
         this.name = name;
     }
@@ -13,7 +15,7 @@ public class Car {
             this.position++;
         }
     }
-
+    
     public String getName() {
         return name;
     }
