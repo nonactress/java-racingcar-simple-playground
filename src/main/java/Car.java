@@ -1,23 +1,24 @@
 public class Car {
+    private static final int MOVE_CONDITION = 4; // 전진 조건
+    private final String name;
+    private int position = 0;
 
-    private String name;
-    private int moveCnt=0;
-
-
-    public int getmoveCnt() {
-        return moveCnt;
+    public Car(String name) {
+        this.name = name;
     }
 
-    public void upmoveCnt() {
-        moveCnt++;
+    // 자동차의 이동 로직. 외부에서 받은 랜덤 값에 따라 스스로 움직입니다.
+    public void move(int randomNumber) {
+        if (randomNumber >= MOVE_CONDITION) {
+            this.position++;
+        }
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getPosition() {
+        return position;
     }
-
 }
