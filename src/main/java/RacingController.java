@@ -1,6 +1,3 @@
-
-
-
 public class RacingController {
     public void run() {
         // 1. 입력 (View)
