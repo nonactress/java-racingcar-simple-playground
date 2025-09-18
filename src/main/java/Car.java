@@ -1,5 +1,5 @@
 public class Car {
-    private static final int MOVE_CONDITION = 4; // 전진 조건
+
     private String name;
     private int position = 0;
 
@@ -11,10 +11,8 @@ public class Car {
         this.name = name;
     }
 
-    public void move(int randomNumber) {
-        if (randomNumber >= MOVE_CONDITION) {
+    public void move() {
             this.position++;
-        }
     }
 
     public String getName() {

@@ -16,8 +16,12 @@ public class Cars {
 
     public void moveAll() {
         for (Car car : cars) {
-            car.move(generateRandom.generate());
-            //car.move(testGenerateRandom.generate());
+            if (generateRandom.generate()) {
+                car.move();
+            }
+//            if (testGenerateRandom.generate()) {
+//                car.move();
+//            }
         }
     }
 
@@ -46,9 +50,9 @@ public class Cars {
 
     public List<Car> getCars() {
         return Collections.unmodifiableList(cars);
-        
+
         /*return this.cars;
-         *위 방식을 안쓴 이유는 객체를 받아서 다른 메소드나 클래스에서 
+         *위 방식을 안쓴 이유는 객체를 받아서 다른 메소드나 클래스에서
          *수정이 가능해 지기 때문에 위 컬렉션 메소드로 반환값 설정
          * */
     }
