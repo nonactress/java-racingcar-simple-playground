@@ -16,13 +16,17 @@ public class Cars {
 
     public void moveAll() {
         for (Car car : cars) {
-            if (generateRandom.generate()) {
-                car.move();
-            }
-//            if (testGenerateRandom.generate()) {
-//                car.move();
-//            }
+            move(car);
         }
+    }
+
+    private void move(Car car) {
+        if (generateRandom.generate()) {
+            car.move();
+        }
+//        if (testGenerateRandom.generate()) {
+//            car.move();
+//        }
     }
 
     public List<String> findWinners() {
