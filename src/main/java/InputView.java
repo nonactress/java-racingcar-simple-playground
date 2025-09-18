@@ -5,7 +5,8 @@ public class InputView {
 
     public static String[] getCarNames() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        return scanner.nextLine().split(",");
+        String[] splitCar = scanner.nextLine().split(",");
+        return splitCar;
     }
 
     public static int getRaceCount() {
@@ -13,5 +14,20 @@ public class InputView {
         int count = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 제거
         return count;
+    }
+
+    public static boolean isValid(String [] cars){
+        if(cars.length == 1 ){
+            System.out.println("한 개 이상의 자동차를 입력해주세요!");
+            return false;
+        }
+        for (String car : cars) {
+            if(car.trim().isEmpty())
+            {
+                System.out.println("자동차의 이름이 공백일 순 없습니다!");
+                return false;
+            }
+        }
+        return true;
     }
 }
