@@ -9,12 +9,16 @@ public class OutputView {
     public static void printRoundResult(List<Car> cars) {
         for (Car car : cars) {
             System.out.print(car.getName() + " : ");
-            for (int i = 0; i < car.getPosition(); i++) {
-                System.out.print("-");
-            }
+            printCarPosition(car);
             System.out.println();
         }
         System.out.println();
+    }
+
+    private static void printCarPosition(Car car) {
+        for (int i = 0; i < car.getPosition(); i++) {
+            System.out.print("-");
+        }
     }
 
     public static void printWinners(List<String> winners) {
