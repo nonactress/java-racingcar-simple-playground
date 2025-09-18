@@ -1,3 +1,4 @@
 public interface GenerateRandom {
-    int generate();
+    static final int MOVE_CONDITION = 4;
+    boolean generate();
 }

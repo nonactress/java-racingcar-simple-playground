@@ -4,7 +4,11 @@ public class GenerateCarRandom implements GenerateRandom {
     private Random random = new Random();
 
     @Override
-    public int generate() {
-        return random.nextInt(10);
+    public boolean generate() {
+        if (random.nextInt(10) > MOVE_CONDITION) {
+            return true;
+        }
+        return false;
+
     }
 }
