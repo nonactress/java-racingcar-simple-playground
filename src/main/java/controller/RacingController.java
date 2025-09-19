@@ -1,3 +1,9 @@
+package controller;
+
+import model.Cars;
+import view.InputView;
+import view.OutputView;
+
 public class RacingController {
     public void run() {
         String[] carNames = InputView.getCarNames();

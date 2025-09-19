@@ -1,3 +1,5 @@
+package model.random;
+
 public class TestGenerateRandom implements GenerateRandom {
     private final int TEST_NUM = 5;
 

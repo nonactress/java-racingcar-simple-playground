@@ -1,11 +1,15 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import model.random.GenerateCarRandom;
+import model.random.GenerateRandom;
 
 public class Cars {
     private final List<Car> cars;
     GenerateRandom generateRandom = new GenerateCarRandom();
-    //GenerateRandom testGenerateRandom = new TestGenerateRandom(); //단위 테스트용 코드
+    //model.random.GenerateRandom testGenerateRandom = new model.random.TestGenerateRandom(); //단위 테스트용 코드
 
     public Cars(String[] carNames) {
         this.cars = new ArrayList<>();
