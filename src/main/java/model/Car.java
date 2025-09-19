@@ -5,16 +5,12 @@ public class Car {
     private String name;
     private int position = 0;
 
-
-    public Car() {
-    }
-
     public Car(String name) {
-        this.name = name;
+        this.name = naAme;
     }
 
     public void move() {
-            this.position++;
+        this.position++;
     }
 
     public String getName() {
