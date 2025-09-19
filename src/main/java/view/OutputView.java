@@ -20,9 +20,7 @@ public class OutputView {
     }
 
     private static void printCarPosition(Car car) {
-        for (int i = 0; i < car.getPosition(); i++) {
-            System.out.print("-");
-        }
+        System.out.print("-".repeat(car.getPosition()));
     }
 
     public static void printWinners(List<String> winners) {
