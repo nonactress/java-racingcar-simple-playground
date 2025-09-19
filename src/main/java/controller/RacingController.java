@@ -12,7 +12,8 @@ public class RacingController {
         Cars cars = new Cars(carNames);
 
         OutputView.printResultMessage();
-        new RacingService(cars,raceCount);
+        RacingService racingService = new RacingService();
+        racingService.startRace(cars, raceCount);
 
         OutputView.printWinners(cars.findWinners());
     }
