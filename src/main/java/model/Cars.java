@@ -37,12 +37,12 @@ public class Cars {
         int maxPosition = findMaxPosition();
         List<String> winners = new ArrayList<>();
         for (Car car : cars) {
-            isFindingFirstPizes(winners, car, maxPosition);
+            checkAndAddWinner(winners, car, maxPosition);
         }
         return winners;
     }
 
-    private void isFindingFirstPizes(List<String> winners, Car car, int maxPosition) {
+    private void checkAndAddWinner(List<String> winners, Car car, int maxPosition) {
         if (car.getPosition() == maxPosition) {
             winners.add(car.getName());
         }

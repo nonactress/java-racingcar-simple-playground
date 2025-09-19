@@ -6,7 +6,7 @@ public class Car {
     private int position = 0;
 
     public Car(String name) {
-        this.name = naAme;
+        this.name = name;
     }
 
     public void move() {
