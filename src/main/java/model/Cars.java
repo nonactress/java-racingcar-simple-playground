@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import model.random.RandomMoveStrategy;
-import model.random.RandomGenerater;
+import model.random.RandomGenerator;
 
 public class Cars {
     private final List<Car> cars;
-    RandomGenerater generateRandom = new RandomMoveStrategy();
+    RandomGenerator generateRandom = new RandomMoveStrategy();
     //model.random.GenerateRandom testGenerateRandom = new model.random.TestGenerateRandom(); //단위 테스트용 코드
 
     public Cars(String[] carNames) {

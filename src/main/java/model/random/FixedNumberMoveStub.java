@@ -1,6 +1,6 @@
 package model.random;
 
-public class AlwaysMoveStub implements RandomGenerater {
+public class FixedNumberMoveStub implements RandomGenerator {
     private final int TEST_NUM = 5;
 
     @Override
