@@ -10,12 +10,18 @@ public class InputView {
         String[] splitCar = scanner.nextLine().split(",");
         while(true)
         {
-            if(isValid(splitCar)){
-                return splitCar;
-            }
+            String[] splits = getStrings(splitCar);
+            if (splits != null) return splits;
             splitCar = scanner.nextLine().split(",");
         }
 
+    }
+
+    private static String[] getStrings(String[] splitCar) {
+        if(isValid(splitCar)){
+            return splitCar;
+        }
+        return null;
     }
 
     public static int getRaceCount() {
@@ -32,12 +38,17 @@ public class InputView {
         }
 
         for (String car : cars) {
-            if(car.trim().isEmpty())
-            {
-                System.out.println("자동차의 이름이 공백일 순 없습니다!");
-                return false;
-            }
+            if (isEmpty(car)) return false;
         }
         return true;
+    }
+
+    private static boolean isEmpty(String car) {
+        if(car.trim().isEmpty())
+        {
+            System.out.println("자동차의 이름이 공백일 순 없습니다!");
+            return true;
+        }
+        return false;
     }
 }
