@@ -12,7 +12,7 @@ public class InputView {
         {
             String[] splits = getStrings(splitCar);
             if (splits != null) return splits;
-            splitCar = scanner.nextLine().split(",");
+            splitCar = scanner.nextLine().split(",", -1);
         }
 
     }
@@ -38,17 +38,12 @@ public class InputView {
         }
 
         for (String car : cars) {
-            if (isEmpty(car)) return false;
+            if(car.trim().isEmpty())
+            {
+                System.out.println("자동차의 이름이 공백일 순 없습니다!");
+                return false;
+            }
         }
         return true;
-    }
-
-    private static boolean isEmpty(String car) {
-        if(car.trim().isEmpty())
-        {
-            System.out.println("자동차의 이름이 공백일 순 없습니다!");
-            return true;
-        }
-        return false;
     }
 }
