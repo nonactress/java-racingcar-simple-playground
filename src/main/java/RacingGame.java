@@ -6,4 +6,3 @@ public class RacingGame {
         racingController.run();
     }
 }
-

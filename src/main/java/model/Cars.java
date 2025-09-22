@@ -8,7 +8,7 @@ import model.random.RandomGenerator;
 
 public class Cars {
     private final List<Car> cars;
-    RandomGenerator generateRandom = new RandomMoveStrategy();
+
     //model.random.GenerateRandom testGenerateRandom = new model.random.TestGenerateRandom(); //단위 테스트용 코드
 
     public Cars(String[] carNames) {
@@ -18,19 +18,16 @@ public class Cars {
         }
     }
 
-    public void moveAll() {
+    public void moveAll(RandomGenerator random) {
         for (Car car : cars) {
-            move(car);
+            move(car,random);
         }
     }
 
-    private void move(Car car) {
-        if (generateRandom.generate()) {
+    private void move(Car car,RandomGenerator random) {
+        if (random.generate()) {
             car.move();
         }
-//        if (testGenerateRandom.generate()) {
-//            car.move();
-//        }
     }
 
     public List<String> findWinners() {
