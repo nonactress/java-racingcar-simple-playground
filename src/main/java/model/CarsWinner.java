@@ -2,18 +2,17 @@ package model;
 
 import model.random.RandomGenerator;
 import model.random.RandomMoveStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class CarsWinner {
-    private final List<Car> cars = new ArrayList<>();
+    private final List<String> winners = new ArrayList<>();
     RandomGenerator generateRandom = new RandomMoveStrategy();
 
-    public List<String> findWinners() {
-        int maxPosition = findMaxPosition();
-        List<String> winners = new ArrayList<>();
-        for (Car car : cars) {
+
+    public List<String> findWinners(Cars cars) {
+        int maxPosition = findMaxPosition(cars);
+        for (Car car : cars.getCars()) {
             checkAndAddWinner(winners, car, maxPosition);
         }
         return winners;
@@ -25,9 +24,9 @@ public class CarsWinner {
         }
     }
 
-    private int findMaxPosition() {
+    private int findMaxPosition(Cars cars) {
         int maxPosition = 0;
-        for (Car car : cars) {
+        for (Car car : cars.getCars()) {
             maxPosition = Math.max(car.getPosition(), maxPosition);
         }
         return maxPosition;

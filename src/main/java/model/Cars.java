@@ -3,13 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import model.random.RandomMoveStrategy;
+
 import model.random.RandomGenerator;
 
 public class Cars {
     private final List<Car> cars;
-
-    //model.random.GenerateRandom testGenerateRandom = new model.random.TestGenerateRandom(); //단위 테스트용 코드
 
     public Cars(String[] carNames) {
         this.cars = new ArrayList<>();
@@ -20,37 +18,14 @@ public class Cars {
 
     public void moveAll(RandomGenerator random) {
         for (Car car : cars) {
-            move(car,random);
+            move(car, random);
         }
     }
 
-    private void move(Car car,RandomGenerator random) {
+    private void move(Car car, RandomGenerator random) {
         if (random.generate()) {
             car.move();
         }
-    }
-
-    public List<String> findWinners() {
-        int maxPosition = findMaxPosition();
-        List<String> winners = new ArrayList<>();
-        for (Car car : cars) {
-            checkAndAddWinner(winners, car, maxPosition);
-        }
-        return winners;
-    }
-
-    private void checkAndAddWinner(List<String> winners, Car car, int maxPosition) {
-        if (car.getPosition() == maxPosition) {
-            winners.add(car.getName());
-        }
-    }
-
-    private int findMaxPosition() {
-        int maxPosition = 0;
-        for (Car car : cars) {
-            maxPosition = Math.max(car.getPosition(), maxPosition);
-        }
-        return maxPosition;
     }
 
     public List<Car> getCars() {
