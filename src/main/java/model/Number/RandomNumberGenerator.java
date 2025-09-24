@@ -2,7 +2,7 @@ package model.Number;
 
 import java.util.Random;
 
-public class RandomNumberGenrator implements NumberGenrator{
+public class RandomNumberGenerator implements NumberGenerator {
 
     @Override
     public int genrator()

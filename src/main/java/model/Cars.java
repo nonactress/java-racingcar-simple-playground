@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 import model.Number.IsMovable;
-import model.Number.RandomNumberGenrator;
 
 public class Cars {
     private final List<Car> cars;
