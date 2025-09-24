@@ -1,13 +1,11 @@
 package model;
 
-import model.random.RandomGenerator;
-import model.random.RandomMoveStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CarsWinner {
     private final List<String> winners = new ArrayList<>();
-    RandomGenerator generateRandom = new RandomMoveStrategy();
 
 
     public List<String> findWinners(Cars cars) {

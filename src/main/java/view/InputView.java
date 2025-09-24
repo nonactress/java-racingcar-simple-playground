@@ -39,9 +39,9 @@ public class InputView {
     }
 
     public static boolean isValid(String[] cars) {
-        if (cars.length == 1) {
-            System.out.println("한 개 이상의 자동차를 입력해주세요!");
-            return false;
+        if (cars.length <= 1) {
+            // boolean을 반환하는 대신, 예외를 생성하고 던집니다.
+            throw new IllegalArgumentException("[ERROR] 두 개 이상의 자동차를 입력해주세요!");
         }
 
         for (String car : cars) {

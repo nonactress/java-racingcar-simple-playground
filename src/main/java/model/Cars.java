@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import model.random.RandomGenerator;
+import model.Number.IsMovable;
+import model.Number.RandomNumberGenrator;
 
 public class Cars {
     private final List<Car> cars;
@@ -16,14 +17,14 @@ public class Cars {
         }
     }
 
-    public void moveAll(RandomGenerator random) {
+    public void moveAll(IsMovable isMovable) {
         for (Car car : cars) {
-            move(car, random);
+            move(car, isMovable);
         }
     }
 
-    private void move(Car car, RandomGenerator random) {
-        if (random.generate()) {
+    private void move(Car car, IsMovable isMovable) {
+        if (isMovable.getcheck()) {
             car.move();
         }
     }
