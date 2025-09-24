@@ -13,7 +13,6 @@ public class RandomMoveStrategyTest {
     void checkRandom (){
         // given: "pobi"라는 이름을 가진 자동차를 준비하고
         String carName = "pobi";
-        FixedNumberMoveStub fixedNumberMoveStub = new FixedNumberMoveStub();
 
     }
 
